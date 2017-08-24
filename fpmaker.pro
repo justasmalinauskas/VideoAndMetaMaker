@@ -30,8 +30,7 @@ SOURCES += \
     database.cpp
 
 HEADERS += \
-        mainwindow.h \
-    database.h
+        mainwindow.h
 
 FORMS += \
         mainwindow.ui

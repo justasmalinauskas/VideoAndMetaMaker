@@ -14,6 +14,7 @@
 #include <iterator>
 #include <QMessageBox>
 #include <QCloseEvent>
+#include <QtSql>
 
 
 MainWindow::MainWindow(QWidget *parent) :
