@@ -15,12 +15,15 @@ protected:
     void dropEvent(QDropEvent *e) override;
     void insertitemstolist();
     void removeitemsfromlist();
+    void ifStopConversion();
     struct ConListMem { QString fname; QString fpath;};
     QList<ConListMem> ConList;
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-
+private slots:
+    void on_ConvertButton_clicked(bool checked);
+    void closeEvent (QCloseEvent *event);
 private:
 
     Ui::MainWindow *ui;

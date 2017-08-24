@@ -7,10 +7,14 @@
 #include <QFileInfo>
 #include <QtGui>
 #include <QListWidget>
+#include <QPushButton>
 #include <initializer_list>
 #include <string>
 #include <algorithm>
 #include <iterator>
+#include <QMessageBox>
+#include <QCloseEvent>
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -47,7 +51,7 @@ void MainWindow::dropEvent(QDropEvent *e)
         if(matchesext)
         {
             qDebug() << "It worked";
-            if(!ConList.contains(fpath))
+            /*if(!ConList.contains(fpath))
             {
                 qDebug() << "2xIt worked";
                 ConListMem mem = ConListMem();
@@ -55,8 +59,66 @@ void MainWindow::dropEvent(QDropEvent *e)
                 mem.fpath = filepath;
                 ConList << mem;
                 //QListWidgetItem* item = mem.fname;
-            }
+            }*/
 
+        }
+
+
+    }
+}
+
+void MainWindow::on_ConvertButton_clicked(bool checked)
+{
+    ui->ConvertButton->setChecked(true);
+    if (checked)
+    {
+        ui->ConvertButton->setText("Cancel");
+    } else {
+
+            ifStopConversion();
+
+    }
+}
+
+void MainWindow::ifStopConversion()
+{
+        QMessageBox msgBox;
+        msgBox.setWindowTitle("Conversion Cancelation");
+        msgBox.setText("Are you sure about that?");
+        msgBox.setInformativeText("By doing that you will lose all your progress that you have been made");
+        msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No );
+        msgBox.setDefaultButton(QMessageBox::No);
+        int ret = msgBox.exec();
+        switch (ret) {
+          case QMessageBox::Yes:
+            //turns off conversion process
+            ui->ConvertButton->setText("Convert");
+            ui->ConvertButton->setChecked(false);
+              break;
+          case QMessageBox::No:
+            //keeps conversion process going on
+            ui->ConvertButton->setChecked(true);
+              break;
+          default:
+              // should never be reached
+              break;
+        }
+}
+
+void MainWindow::closeEvent (QCloseEvent *event)// checking if whether conversion in on going or not when closing application if yes, asking if cancel consverion
+{
+    if (!ui->ConvertButton->isChecked()) {
+        event->accept();
+        //event->ignore();
+    } else {
+        ifStopConversion();
+        if (!ui->ConvertButton->isChecked())
+        {
+            event->accept();
+        }
+        else
+        {
+            event->ignore();
         }
 
 
