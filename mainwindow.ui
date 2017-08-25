@@ -33,7 +33,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="ConQTab">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -41,7 +41,23 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QTableView" name="ConversionList"/>
+         <widget class="QTableWidget" name="ConversionList">
+          <property name="frameShape">
+           <enum>QFrame::HLine</enum>
+          </property>
+          <property name="showGrid">
+           <bool>false</bool>
+          </property>
+          <property name="gridStyle">
+           <enum>Qt::NoPen</enum>
+          </property>
+          <property name="sortingEnabled">
+           <bool>false</bool>
+          </property>
+          <attribute name="verticalHeaderCascadingSectionResizes">
+           <bool>false</bool>
+          </attribute>
+         </widget>
         </item>
         <item>
          <widget class="QPushButton" name="ConvertButton">
@@ -71,7 +87,7 @@
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="1" column="5">
-         <widget class="QListView" name="listView_2"/>
+         <widget class="QListView" name="TitlesList"/>
         </item>
         <item row="2" column="0">
          <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0">
@@ -102,7 +118,7 @@
          </layout>
         </item>
         <item row="1" column="0">
-         <widget class="QListView" name="listView"/>
+         <widget class="QListView" name="ClientsList"/>
         </item>
         <item row="0" column="0">
          <widget class="QLabel" name="label">

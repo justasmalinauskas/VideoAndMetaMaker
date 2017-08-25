@@ -27,10 +27,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    database.cpp
+    database.cpp \
+    titlesdatalive.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    database.h \
+    titlesdatalive.h
 
 FORMS += \
         mainwindow.ui

@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QStringList>
+#include "titlesdatalive.h"
+#include "database.h"
 
 namespace Ui {
 class MainWindow;
@@ -16,19 +19,24 @@ protected:
     void insertitemstolist();
     void removeitemsfromlist();
     void ifStopConversion();
-    struct ConListMem { QString fname; QString fpath;};
-    QList<ConListMem> ConList;
+    void AddItemConList(QString filename, QString filepath);
+
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 private slots:
     void on_ConvertButton_clicked(bool checked);
     void closeEvent (QCloseEvent *event);
+
 private:
 
     Ui::MainWindow *ui;
     QAction *insertAction;
     QAction *removeAction;
+    QStringList m_TableHeader;
+
+    QList<TitlesDataLive> ConList;
+    DataBase db;
 };
 
 #endif // MAINWINDOW_H
