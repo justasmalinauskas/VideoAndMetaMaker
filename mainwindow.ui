@@ -76,49 +76,39 @@
          </widget>
         </item>
        </layout>
-       <zorder>ConversionList</zorder>
-       <zorder>ConvertButton</zorder>
-       <zorder>ConversionList</zorder>
-       <zorder>ConvertButton</zorder>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
         <string>Metadata Setup</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="1" column="5">
-         <widget class="QListView" name="TitlesList"/>
-        </item>
         <item row="2" column="0">
          <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0">
           <property name="spacing">
            <number>24</number>
           </property>
           <item>
-           <widget class="QToolButton" name="toolButton">
+           <widget class="QToolButton" name="addClient">
             <property name="text">
              <string>Add</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QToolButton" name="toolButton_3">
+           <widget class="QToolButton" name="removeClient">
             <property name="text">
              <string>Remove</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QToolButton" name="toolButton_2">
+           <widget class="QToolButton" name="editClient">
             <property name="text">
              <string>Edit</string>
             </property>
            </widget>
           </item>
          </layout>
-        </item>
-        <item row="1" column="0">
-         <widget class="QListView" name="ClientsList"/>
         </item>
         <item row="0" column="0">
          <widget class="QLabel" name="label">
@@ -137,27 +127,33 @@
         <item row="2" column="5">
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <widget class="QToolButton" name="toolButton_6">
+           <widget class="QToolButton" name="addTitle">
             <property name="text">
              <string>Add</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QToolButton" name="toolButton_5">
+           <widget class="QToolButton" name="removeTitle">
             <property name="text">
              <string>Remove</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QToolButton" name="toolButton_4">
+           <widget class="QToolButton" name="editTitle">
             <property name="text">
              <string>Edit</string>
             </property>
            </widget>
           </item>
          </layout>
+        </item>
+        <item row="1" column="0">
+         <widget class="QListView" name="ClientsList"/>
+        </item>
+        <item row="1" column="5">
+         <widget class="QListView" name="TitlesList"/>
         </item>
        </layout>
       </widget>

@@ -28,12 +28,18 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     database.cpp \
-    titlesdatalive.cpp
+    titlesdatalive.cpp \
+    clientsdialog.cpp \
+    titlesdialog.cpp
 
 HEADERS += \
         mainwindow.h \
     database.h \
-    titlesdatalive.h
+    titlesdatalive.h \
+    clientsdialog.h \
+    titlesdialog.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    clientsdialog.ui \
+    titlesdialog.ui
